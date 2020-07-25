@@ -65,21 +65,21 @@ let sketch = (sketch) => {
                 //     sketch.sizes.size3.height
                 // );
                 sketch.blackRect(
-                    11,
                     15,
+                    8,
                     sketch.sizes.size4.width,
                     sketch.sizes.size4.height
                 );
 
                 sketch.blackRect(
-                    19,
                     15,
+                    21,
                     sketch.sizes.size4.width,
                     sketch.sizes.size4.height
                 );
 
                 sketch.blackRect(
-                    27,
+                    28,
                     15,
                     sketch.sizes.size4.width,
                     sketch.sizes.size4.height
