@@ -41,8 +41,8 @@ let sketch = (sketch) => {
 
     sketch.draw = () =>{
         //draw grid
-        // sketch.rectMode(sketch.CENTER);
-        // sketch.angleMode(sketch.DEGREES);
+        sketch.rectMode(sketch.CENTER);
+        sketch.angleMode(sketch.DEGREES);
         for (var x = 0; x < sketch.canvasWidth; x += sketch.canvasWidth / sketch.gridColumns) {
             for (var y = 0; y < sketch.canvasHeight; y += sketch.canvasHeight / sketch.gridRows) {
                 if(sketch.showGrid){
@@ -53,31 +53,36 @@ let sketch = (sketch) => {
                 }
                 
                 sketch.blackRect(
-                    13,
-                    2,
-                    sketch.sizes.size3.width,
-                    sketch.sizes.size3.height
-                );
-
-                sketch.blackRect(
-                    13,
-                    16,
-                    sketch.sizes.size3.width,
-                    sketch.sizes.size3.height
-                );
-
-                sketch.blackRect(
-                    -20,
-                    0,
+                    -7,
+                    15,
                     sketch.sizes.size1.width,
                     sketch.sizes.size1.height
                 );
 
+                // sketch.blackRect(
+                //     13,
+                //     16,
+                //     sketch.sizes.size3.width,
+                //     sketch.sizes.size3.height
+                // );
                 sketch.blackRect(
-                    28,
-                    12,
+                    19,
+                    20,
+                    sketch.sizes.size3.width,
+                    sketch.sizes.size3.height
+                );
+                sketch.blackRect(
+                    16,
+                    7,
                     sketch.sizes.size4.width,
                     sketch.sizes.size4.height
+                );
+
+                sketch.blackRect(
+                    30,
+                    4,
+                    sketch.sizes.size3.width,
+                    sketch.sizes.size3.height
                 );
             }
         }
