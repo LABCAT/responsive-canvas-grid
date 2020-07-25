@@ -53,7 +53,7 @@ let sketch = (sketch) => {
                 }
                 
                 sketch.blackRect(
-                    -7,
+                    -9,
                     15,
                     sketch.sizes.size1.width,
                     sketch.sizes.size1.height
@@ -65,21 +65,21 @@ let sketch = (sketch) => {
                 //     sketch.sizes.size3.height
                 // );
                 sketch.blackRect(
-                    16,
+                    11,
                     15,
                     sketch.sizes.size4.width,
                     sketch.sizes.size4.height
                 );
 
                 sketch.blackRect(
-                    22,
+                    19,
                     15,
                     sketch.sizes.size4.width,
                     sketch.sizes.size4.height
                 );
 
                 sketch.blackRect(
-                    28,
+                    27,
                     15,
                     sketch.sizes.size4.width,
                     sketch.sizes.size4.height
