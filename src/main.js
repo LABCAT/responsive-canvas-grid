@@ -58,32 +58,39 @@ let sketch = (sketch) => {
                     sketch.sizes.size1.width,
                     sketch.sizes.size1.height
                 );
-
                 // sketch.blackRect(
-                //     13,
-                //     16,
+                //     19,
+                //     20,
                 //     sketch.sizes.size3.width,
                 //     sketch.sizes.size3.height
                 // );
                 sketch.blackRect(
-                    19,
-                    20,
-                    sketch.sizes.size3.width,
-                    sketch.sizes.size3.height
-                );
-                sketch.blackRect(
                     16,
-                    7,
+                    15,
                     sketch.sizes.size4.width,
                     sketch.sizes.size4.height
                 );
 
                 sketch.blackRect(
-                    30,
-                    4,
-                    sketch.sizes.size3.width,
-                    sketch.sizes.size3.height
+                    22,
+                    15,
+                    sketch.sizes.size4.width,
+                    sketch.sizes.size4.height
                 );
+
+                sketch.blackRect(
+                    28,
+                    15,
+                    sketch.sizes.size4.width,
+                    sketch.sizes.size4.height
+                );
+
+                // sketch.blackRect(
+                //     30,
+                //     4,
+                //     sketch.sizes.size3.width,
+                //     sketch.sizes.size3.height
+                // );
             }
         }
     }
