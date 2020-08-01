@@ -5,9 +5,11 @@ let sketch = (sketch) => {
     
     sketch.canvasHeight = window.innerHeight;
 
-    sketch.gridColumns = 10;
+    sketch.gridColumns = 59.5;
 
-    sketch.gridRows = 10;
+    sketch.gridRows = 84.2;
+
+    sketch.showGrid = false;
 
     sketch.setup = () =>{
         sketch.createCanvas(sketch.canvasWidth, sketch.canvasHeight);
@@ -15,18 +17,27 @@ let sketch = (sketch) => {
 
     sketch.draw = () =>{
         //draw grid
-        for (var x = 0; x < sketch.canvasWidth; x += sketch.canvasWidth / sketch.gridColumns) {
-            for (var y = 0; y < sketch.canvasHeight; y += sketch.canvasHeight / sketch.gridRows) {
-                sketch.stroke(0);
-                sketch.strokeWeight(1);
-                sketch.line(x, 0, x, sketch.canvasHeight);
-                sketch.line(0, y, sketch.canvasWidth, y);
+        if (sketch.showGrid){
+            for (var x = 0; x < sketch.canvasWidth; x += sketch.canvasWidth / sketch.gridColumns) {
+                for (var y = 0; y < sketch.canvasHeight; y += sketch.canvasHeight / sketch.gridRows) {
+                    sketch.stroke(0, 0, 0, 0.3);
+                    sketch.strokeWeight(1);
+                    sketch.line(x, 0, x, sketch.canvasHeight);
+                    sketch.line(0, y, sketch.canvasWidth, y);
+                }
             }
+        }
+
+        sketch.stroke(0);
+        sketch.strokeWeight(20);
+        console.log(sketch.mouseIsPressed);
+        if (sketch.mouseIsPressed == true) {
+            console.log(sketch.mouseIsPressed);
+            sketch.line(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
         }
     }
 
     sketch.updateCanvasDimensions = () => {
-        console.log('sdfsdfsdf');
         sketch.canvasWidth = window.innerWidth;
         sketch.canvasHeight = window.innerHeight;
         sketch.resizeCanvas(sketch.canvasWidth, sketch.canvasHeight);
