@@ -11,6 +11,8 @@ let sketch = (sketch) => {
 
     sketch.showGrid = false;
 
+    sketch.shapeSize = 50;    
+
     sketch.setup = () =>{
         sketch.createCanvas(sketch.canvasWidth, sketch.canvasHeight);
     }
@@ -28,12 +30,27 @@ let sketch = (sketch) => {
             }
         }
 
-        sketch.stroke(0);
-        sketch.strokeWeight(20);
+        
         console.log(sketch.mouseIsPressed);
         if (sketch.mouseIsPressed == true) {
+            
+            sketch.strokeWeight(0);
+            sketch.fill(0);
+            if (sketch.mouseButton === sketch.LEFT) {
+                sketch.strokeWeight(1);
+                sketch.line(sketch.mouseX - sketch.shapeSize, sketch.mouseY, sketch.mouseX + sketch.shapeSize, sketch.mouseY);
+                sketch.line(sketch.mouseX, sketch.mouseY - sketch.shapeSize, sketch.mouseX, sketch.mouseY + sketch.shapeSize);
+            }
+            if (sketch.mouseButton === sketch.RIGHT) {
+                sketch.fill(128, 128, 128);
+                sketch.rect(sketch.mouseX, sketch.mouseY, sketch.shapeSize, sketch.shapeSize);
+            }
+            if (sketch.mouseButton === sketch.CENTER) {
+                sketch.fill(192, 192, 192);
+                sketch.ellipse(sketch.mouseX, sketch.mouseY, sketch.shapeSize, sketch.shapeSize);
+            }
             console.log(sketch.mouseIsPressed);
-            sketch.line(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
+            //sketch.line(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
         }
     }
 
