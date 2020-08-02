@@ -38,44 +38,88 @@ let sketch = (sketch) => {
         sketch.drawTheLetterB();
     }
 
+    sketch.squareColours = [
+        //column 1
+        [0, 0, 0],
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255],
+        [0, 0, 0],
+        //column 2
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        //column 3
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        //column 4
+        [0, 0, 0],
+        [255, 255, 255],
+        [255, 255, 255],
+        [0, 0, 0],
+        [0, 0, 0],
+        [255, 255, 255],
+        [255, 255, 255],
+        [0, 0, 0],
+        //column 5
+        [0, 0, 0],
+        [255, 255, 255],
+        [255, 255, 255],
+        [0, 0, 0],
+        [0, 0, 0],
+        [255, 255, 255],
+        [255, 255, 255],
+        [0, 0, 0],
+        //column 6
+        [0, 0, 0],
+        [255, 255, 255],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [255, 255, 255],
+        [0, 0, 0],
+        //column 7
+        [0, 0, 0],
+        [255, 255, 255],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [255, 255, 255],
+        [0, 0, 0],
+        //column 8
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+    ];
+
     sketch.drawTheLetterB = () => {
-        sketch.gridRect(0, 0);
-        sketch.gridRect(0, 1);
-        sketch.gridRect(0, 2);
-        sketch.gridRect(0, 3);
-        sketch.gridRect(0, 4);
-        sketch.gridRect(0, 5);
-        sketch.gridRect(0, 6);
-        sketch.gridRect(0, 7);
-
-        sketch.gridRect(1, 0);
-        sketch.gridRect(2, 0);
-        sketch.gridRect(3, 0);
-        sketch.gridRect(4, 0);
-        sketch.gridRect(5, 1);
-        sketch.gridRect(6, 2);
-
-        sketch.gridRect(4, 1);
-        sketch.gridRect(5, 2);
-
-        sketch.gridRect(1, 7);
-        sketch.gridRect(2, 7);
-        sketch.gridRect(3, 7);
-        sketch.gridRect(4, 7);
-        sketch.gridRect(5, 6);
-        sketch.gridRect(6, 5);
-
-        sketch.gridRect(1, 3);
-        sketch.gridRect(2, 3);
-        sketch.gridRect(3, 3);
-        sketch.gridRect(4, 3);
-        sketch.gridRect(5, 3);
-        sketch.gridRect(6, 3);
-        sketch.gridRect(7, 4);
-
-        sketch.gridRect(6, 4);
-        sketch.gridRect(5, 5);
-        sketch.gridRect(4, 6);
+        let count = 0;
+        for (var x = 0; x < sketch.gridColumns; x++) {
+            for (var y = 0; y < sketch.gridRows; y++) {
+                sketch.gridRect(x, y, 1, 1, sketch.squareColours[count])
+                count++;
+            }
+        }
     }
 
     sketch.gridRect = (x, y, width = 1, height = 1, fill = [0,0,0]) => {
