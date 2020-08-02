@@ -1,5 +1,7 @@
 import * as p5 from "p5/lib/p5.min.js";
 
+import './assets/style.css';
+
 let sketch = (sketch) => {
 
     sketch.showGrid = false;
