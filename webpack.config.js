@@ -1,10 +1,13 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const devMode = (process.argv.slice().pop() !== 'production');
 
 module.exports = {
     mode: 'development', 
     entry: "./src/main.js",
     output: {
-        path: __dirname,
+        path: __dirname + '/dist',
         filename: "bundle.js"
     },
     module: {
@@ -18,12 +21,25 @@ module.exports = {
               presets: ['@babel/preset-env']
             }
           }
+        },
+        {
+          test: /\.css?$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader'
+          ]
         }
       ]
     },
     plugins: [
       new HtmlWebpackPlugin({
         template: 'public/index.html'
-      })
+      }),
+      // extract css into dedicated file
+      new MiniCssExtractPlugin(
+        {
+          filename: devMode ? 'css/[name].css' : 'css/style.css'
+        }
+      ),
     ]
   };
