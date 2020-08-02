@@ -38,7 +38,7 @@ let sketch = (sketch) => {
         }
     }
 
-    sketch.gridRect = (x, y, width, height, fill = [0,0,0]) => {
+    sketch.gridRect = (x, y, width = 1, height = 1, fill = [0,0,0]) => {
         let calulatedWidth = width * sketch.gridColumnWidth;
         let calulatedHeight = height * sketch.gridColumnHeight;
         sketch.fill(fill[0], fill[1], fill[2]);
